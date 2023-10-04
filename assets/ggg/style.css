@@ -1,0 +1,266 @@
+@import url(./fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #afafaf;
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+body {
+    font-family: 'SegoeUI';
+    background-image: url(../img/Windows-11-Bloom-Screensaver-Dark-scaled.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-attachment: fixed;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    /* white-space: pre; */
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: -1;
+}
+
+#audio2 {
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 20px;
+    width: 100vw;
+    text-align: center;
+}
+
+.cmd {
+    width: 80vw;
+    height: 80vh;
+    margin: 7.8vh auto;
+    background-color: #000;
+    border-radius: 13px;
+    box-shadow: 0 0 10px #000;
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 99999;
+}
+
+.ribbon {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    color: #000;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    box-shadow: 0 0 10px #000;
+    margin: 3px;
+    padding: 3px;
+}
+
+.titleer img {
+    width: 35px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.btn {
+    width: 20px;
+    height: 100%;
+    background-color: #fff;
+    /* border-radius: 50%; */
+    /* margin: 5px; */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.maximize {
+    margin-top: 3px;
+    font-size: 15px;
+}
+
+/* .close {
+    background-color: red;
+} */
+
+.prompt {
+    padding: 5px;
+}
+
+.input {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    caret-shape: block;
+    -webkit-caret-shape: #fff;
+    font-family: 'CascadiaCode';
+}
+
+.btns {
+    float: right;
+    /* margin: 3px; */
+    /* padding: .1px; */
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.body {
+    margin: 10px;
+    padding: 5px;
+    font-family: 'CascadiaCode';
+    /* overflow: scroll; */
+}
+
+.body a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.taskbar {
+    width: 100%;
+    height: 4.5vh;
+    background-color: #1F2B37;
+    color: #fff;
+    box-shadow: 0 0 10px #000;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    z-index: 9999999;
+    user-select: none;
+    overflow: none;
+}
+
+.task-icon {
+    margin: 7px;
+    width: 37px;
+    height: 37px;
+    padding: 5px;
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    transition: background 100ms ease-in-out;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    overflow: none;
+}
+
+@media (max-width: 768px) {
+    .taskbar {
+        height: 7vh;
+        flex-direction: column;
+    }
+    .task-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.task-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.task-icon:hover {
+    background: #46464694;
+    /* background: red; */
+}
+
+/* adds the animation based on classlist */
+.task-icon.pushIn {
+    animation: pushIn 150ms linear;
+}
+.task-icon.pullUp {
+    animation: pullUp 150ms linear;
+}
+.task-icon.pushDown {
+    animation: pushDown 150ms linear;
+}
+
+.time {
+    margin: 7px;
+    font-size: 15px;
+    font-family: 'SegoeUI';
+    text-align: right;
+}
+
+@keyframes pushIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pullUp {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(-15%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes pushDown {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(15%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}

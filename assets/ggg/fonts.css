@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'SegoeUI';
+    src: url(../fonts/SegoeUI.ttf);
+}
+
+@font-face {
+    format: woff2;
+    font-family: 'CascadiaCode';
+    src: url(../fonts/CascadiaCode.woff2) format('woff2');
+}
